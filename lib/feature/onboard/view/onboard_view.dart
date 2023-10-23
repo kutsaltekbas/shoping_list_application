@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoping_list_application/product/constant/image/image_constants.dart';
+import 'package:shoping_list_application/product/init/navigation/app_router.dart';
 import 'package:shoping_list_application/product/utility/extension/context_extension.dart';
 
 @RoutePage(name: 'OnBoardRoute')
@@ -46,7 +47,10 @@ class OnBoardView extends StatelessWidget {
                       height: 30.h,
                       width: 150.w,
                       child: ElevatedButton(
-                          onPressed: () {}, child: Text("Sign up"))),
+                          onPressed: () {
+                            context.router.push(const SignUpRoute());
+                          },
+                          child: Text("Sign up"))),
                 ],
               ),
               SizedBox(height: 30.h)
