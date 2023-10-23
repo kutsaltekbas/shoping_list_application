@@ -13,13 +13,14 @@ class SignUpView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        padding: context.padding2,
         width: context.width,
         height: context.height,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(ImageConstants.instance.createAccount),
                 fit: BoxFit.fill,
-                opacity: 0.6)),
+                opacity: 0.5)),
         child: Column(
           children: [
             SizedBox(height: 60.h),
@@ -34,12 +35,31 @@ class SignUpView extends StatelessWidget {
                   )),
             ),
             SizedBox(height: 50.h),
-            Text("Create a New Account"),
+            Text(
+              "Create a New Account",
+              style: context.textTheme.displayLarge,
+              textAlign: TextAlign.center,
+            ),
             SizedBox(height: 10.h),
-            TextField(),
-            TextField(),
-            TextField(),
-            ElevatedButton(onPressed: () {}, child: Text("Create an account")),
+            ListView.builder(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: 3,
+              itemBuilder: (context, index) => Container(
+                  margin: context.bottomPadding1,
+                  width: context.width,
+                  height: 45.h,
+                  child: TextField(
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                        contentPadding: context.padding1, hintText: 'Name'),
+                  )),
+            ),
+            Container(
+                width: context.width,
+                height: 45.h,
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text("Create an account"))),
             SizedBox(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

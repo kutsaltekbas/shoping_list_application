@@ -20,36 +20,48 @@ class OnBoardView extends StatelessWidget {
           image: DecorationImage(
               image: AssetImage(ImageConstants.instance.onboard),
               fit: BoxFit.fill,
-              opacity: 0.6),
+              opacity: 0.5),
         ),
         child: Padding(
           padding: context.paddingHorizontal3,
           child: Column(
             children: [
               SizedBox(height: 80.h),
-              Text("Welcome to Shoping App"),
-              Text("The Right Way to Make Your Shopping Easier"),
+              Text(
+                "Welcome to Shoping App",
+                style: context.textTheme.displayLarge,
+              ),
+              SizedBox(height: 5.h),
+              Text(
+                "The Right Way to Make Your Shopping Easier",
+                style: context.textTheme.displaySmall,
+              ),
               const Spacer(),
-              Text("Save Your Time & Energy"),
+              Text(
+                "Save Your Time & Energy",
+                style: context.textTheme.displayMedium,
+              ),
               SizedBox(height: 10.h),
               Text(
-                  "Make shopping smarter, avoid extra trips to the supermarkets & malls and get more organized using Shopifylist."),
+                "Make shopping smarter, avoid extra trips to the supermarkets & malls and get more organized using Shopifylist.",
+                style: context.textTheme.headlineSmall,
+              ),
               SizedBox(height: 30.h),
               Row(
                 children: [
                   SizedBox(
-                      height: 30.h,
+                      height: 35.h,
                       width: 150.w,
-                      child: ElevatedButton(
+                      child: OutlinedButton(
                           onPressed: () {
                             context.router.push(const LoginRoute());
                           },
                           child: Text("Sign in"))),
                   const Spacer(),
                   SizedBox(
-                      height: 30.h,
+                      height: 35.h,
                       width: 150.w,
-                      child: ElevatedButton(
+                      child: OutlinedButton(
                           onPressed: () {
                             context.router.push(const SignUpRoute());
                           },

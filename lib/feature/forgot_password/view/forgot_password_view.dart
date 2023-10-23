@@ -14,13 +14,14 @@ class ResetPasswordView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        padding: context.padding2,
         width: context.width,
         height: context.height,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(ImageConstants.instance.signIn),
+                image: AssetImage(ImageConstants.instance.resetPassword),
                 fit: BoxFit.fill,
-                opacity: 0.6)),
+                opacity: 0.5)),
         child: Column(
           children: [
             SizedBox(height: 60.h),
@@ -35,11 +36,30 @@ class ResetPasswordView extends StatelessWidget {
                   )),
             ),
             SizedBox(height: 50.h),
-            Text("Set a New Password"),
+            Text(
+              "Set a New Password",
+              style: context.textTheme.displayLarge,
+            ),
             SizedBox(height: 10.h),
-            TextField(),
-            TextField(),
-            ElevatedButton(onPressed: () {}, child: Text("Reset Password")),
+            ListView.builder(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: 2,
+              itemBuilder: (context, index) => Container(
+                  margin: context.bottomPadding1,
+                  width: context.width,
+                  height: 45.h,
+                  child: TextField(
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                        contentPadding: context.padding1, hintText: 'Name'),
+                  )),
+            ),
+            SizedBox(
+                height: 45.h,
+                width: context.width,
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text("Reset Password"))),
           ],
         ),
       ),
