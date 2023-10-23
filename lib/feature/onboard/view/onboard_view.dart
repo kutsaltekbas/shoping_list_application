@@ -41,7 +41,10 @@ class OnBoardView extends StatelessWidget {
                       height: 30.h,
                       width: 150.w,
                       child: ElevatedButton(
-                          onPressed: () {}, child: Text("Sign in"))),
+                          onPressed: () {
+                            context.router.push(const LoginRoute());
+                          },
+                          child: Text("Sign in"))),
                   const Spacer(),
                   SizedBox(
                       height: 30.h,
