@@ -1,14 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoping_list_application/product/init/navigation/app_router.dart';
 import 'package:shoping_list_application/product/utility/extension/context_extension.dart';
 
 import '../../../product/constant/image/image_constants.dart';
 
-@RoutePage(name: 'LoginRoute')
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+@RoutePage(name: 'ResetPasswordRoute')
+class ResetPasswordView extends StatelessWidget {
+  const ResetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +35,11 @@ class LoginView extends StatelessWidget {
                   )),
             ),
             SizedBox(height: 50.h),
-            Text("Sign in to Your Account"),
+            Text("Set a New Password"),
             SizedBox(height: 10.h),
             TextField(),
             TextField(),
-            ElevatedButton(onPressed: () {}, child: Text("Sign in")),
-            SizedBox(height: 10.h),
-            GestureDetector(
-                onTap: () => context.router.push(const ResetPasswordRoute()),
-                child: Text("Forgot your password?"))
+            ElevatedButton(onPressed: () {}, child: Text("Reset Password")),
           ],
         ),
       ),
